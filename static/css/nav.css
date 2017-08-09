@@ -1,0 +1,30 @@
+.nav-my{
+  background: #fff;
+  border-radius: 0px;
+}
+.navbar{
+    margin-bottom: 0px;
+
+  }
+.my-menu{
+  min-width: 50px;
+}
+ /*  .drop-menu{
+   left:0; top:49px;
+   position:absolute;
+   list-style:none;
+   padding: 0px;
+   width:100%;
+   float:left; background-color:#fff;
+   display:none;
+   z-index: 3;
+ }
+ .drop-a{
+   display: block;
+   padding: 10px 0 10px 15px;
+ }
+ .drop-a:hover{
+   background-color: #eee;
+ }
+ .navbar-nav li{position:relative;}
+ .navbar-nav li:hover .drop-menu{display:block;} */

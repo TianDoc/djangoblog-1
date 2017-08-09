@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+ {% load myfilter %}
+ {% load staticfiles %}
+{% block title %}朽小蜗{% endblock %}
+ 
+{% block cssjs %}
+<link href="{% static 'css/archive.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+<div class="art-content">
+  <div class="container cent">
+   
+      <div class="col-md-10 col-md-offset-1 sing-content">
+      <h5 class="archive-title">历史</h5>
+      <div class="row">
+        <div class=" col-xs-10 archive-list">
+            <div data-spy="scroll" data-target="#navbarExample" data-offset="0" >
+        {% regroup article_archive by time as time_list %}            
+            {% for time in time_list %}
+                <h4 id="{{ time.grouper }}"><span>{{ time.grouper|my_rep }}</span></h4>
+                <ul class="archive-ul">
+                    {% for item in time.list %}
+
+                      <li><span>{{ item.published_date.day|my_bj }}</span>  <a href="{% url 'article' item.id %}" class='archive-a'>{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+            </div>
+        </div>
+         <div class=" col-xs-2" >
+            <nav class="affix">
+            <span>Map</span>
+            <ul class="map">
+              {%  for year,months in date_list %}            
+                    <li class="drop-title">
+                    <a href="#{{ year }}-{{ months|first }}" >{{ year }}年</a>
+
+                    <ul class="drop-map">
+                    {%  for month in months %}            
+                    <li><a href="#{{year}}-{{month}}">{{ month }}月</a></li>        
+                    {% endfor %}
+                    </ul> 
+                    </li>  
+            {% endfor %}
+          </ul> 
+          </nav>
+        </div>
+        </div>
+      </div>
+    
+   </div>
+</div>
+
+{% endblock %}
+
+<script type="text/javascript">
+    
+</script>
+
+

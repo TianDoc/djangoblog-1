@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+ 
+{% block title %}朽小蜗{% endblock %}
+
+{% block cssjs %}
+ <script src="{% static 'js/changyan.js' %}" ></script> 
+<link href="{% static 'css/comment.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="art-content">
+  <div class="container cent">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="sing-content">
+          <div class='comment'>
+            <h1 class="con-title">留言</h1>
+            <div class="col-md-10 col-md-offset-1 comment-desc">
+                <div class="col-md-10 comment-wz">
+                    <div class="center-block"> 亲爱的小伙伴，欢迎光临朽小蜗，留下你的爪印吧，我会及时回复和互访的！
+                     </div>     
+                </div>
+                      <div class="col-md-2 comment-img">
+                        <div class="c-img">
+                           <img class="img-responsive" src="{% static 'img/comment.gif' %}"
+                                 alt="">
+                        </div>
+                      </div>
+                  
+            </div>
+          </div>
+          <div class="comment">
+         <div id="SOHUCS"  sid="comment"></div> 
+          </div>
+        </div>
+      </div>
+   </div>
+</div>
+{% endblock %}
+
+
+
+

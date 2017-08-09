@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<link href="{% static 'css/footer.css' %}" rel="stylesheet">
+<div class="footer-overlay">
+    <div class="container">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="col-sm-4 ">
+          <div class="views">
+            <div class="views-head">点击排行</div>
+              <ul class="media-list">
+              {% for art in views_list %}
+                <li class="media media-my">
+                  <div class="media-left">
+                    <a href="{% url 'article' art.id %}">
+                      <img class="media-object" src="{{ MEDIA_URL }}{{ art.img }}?imageView2/1/w/45/h/45" >
+                    </a>
+                  </div>
+                <div class="media-body">
+                  <div class="media-heading m-h"><a href="{% url 'article' art.id %}">{{ art.title }}</a></div>
+                  <div class="media-time">{{ art.published_date|date:"F j, Y" }}</div>
+                </div>
+              </li>
+          
+              {% endfor %}
+             </ul>
+        </div>
+      </div>
+      <div class="col-sm-4 ">
+        <div class="tags">
+            <div class="tags-head">标签云</div>
+            <ul class="media-list">
+              
+             {% for tag in all_tags %}
+
+                <li class="tag-a"><a href="{% url 'arts_by_tag' tag.id %}">{{ tag.name }}</a></li>
+             {% endfor %} 
+              
+            </ul>
+        </div>
+      </div>
+      <div class="col-sm-4 ">
+          <div class="contcat">
+           <div class="contcat-head">联系</div>
+           <ul class="contcat-body">
+             {% for contcat in contcat_list %}
+                <li class="contcat-a"><a href="{{ contcat.url }}">{{ contcat.name }}</a></li>
+             {% endfor %}
+             
+           </ul>
+                  </div> 
+      </div>
+      
+    </div>
+    </div>
+    <div class="bottom">
+       Copyright © 2017 Created by <a href="{% url 'about' %}">朽小蜗</a> Powered by <a href="https://www.aliyun.com/">阿里云</a> & <a href="https://www.djangoproject.com/">Django</a> ICP备案号：冀ICP备16003243号
+    </div>
+</div>

@@ -1,0 +1,37 @@
+  .art-content{
+    padding: 50px 0;
+    background: hsl(511, 20%, 97%);
+    background-image:url("/static/img/964.jpg") ;
+    -moz-background-size:cover;
+    -webkit-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    }
+    .archive-title{
+        font-weight: 100;
+        color: #777777;
+        font-size: 24px;
+        margin-top: 0px;
+        padding: 10px 0;
+        margin-bottom: 14px;
+    }
+    .sing-content{
+       padding: 60px !important;
+       background: #fff;
+       color: #6d6d6d;
+       
+    }
+    .search{
+        min-height:350px;
+    }
+    .no-result{
+      text-align: center;
+    }
+  .r-wz{
+    margin-top: 60px;
+  }
+ @media(max-width: 772px ) {
+    .sing-content{
+        padding: 30px !important;
+    }
+}

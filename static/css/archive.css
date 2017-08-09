@@ -1,0 +1,64 @@
+.art-content{
+padding: 50px 0;
+background: hsl(511, 20%, 97%);
+background-image:url("/static/img/964.jpg") ;
+-moz-background-size:cover;
+-webkit-background-size:cover;
+-o-background-size:cover;
+background-size:cover;
+}
+.archive-title{
+    font-weight: 100;
+    color: #777777;
+    font-size: 24px;
+    margin-top: 0px;
+    padding: 10px 0;
+    margin-bottom: 14px;
+}
+
+.sing-content{
+   padding: 60px !important;
+   background: #fff;
+   color: #6d6d6d;
+}
+
+.archive-a{color: #6bd233;}
+.archive-a:hover{
+     text-decoration:underline;
+}
+.archive-ul{
+    margin: 20px;
+    padding-left: 20px;
+        }
+.archive-ul>li{
+    margin: 2px;
+    line-height: 34px;
+}
+.archive-ul>li>span{
+    padding-right: 15px;
+}
+.map>li>a{
+    padding: 5px 2px;
+    display: block;
+}
+.map,.drop-map{
+    list-style:none;
+    padding: 0px;
+    
+
+}
+.map>li>a{
+    display: block;
+    padding: 5px 0px;
+}
+.drop-map{
+    display: none;
+    z-index: 3;
+}
+.map>li:hover .drop-map{display:block;}
+
+@media(max-width: 772px ) {
+    .sing-content{
+        padding: 30px !important;
+    }
+}

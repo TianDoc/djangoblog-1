@@ -1,0 +1,57 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+ {% load myfilter %}
+{% block title %}朽小蜗{% endblock %}
+ 
+{% block cssjs %}
+<link href="{% static 'css/search.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="art-content">
+  <div class="container cent">
+   
+      <div class="col-md-10 col-md-offset-1 sing-content">
+      <div class="search">
+      <h5 class="archive-title">Results</h5>
+        <ul class="media-list">
+      {% if article_list %}
+         {% for art in article_list %}
+          <li class="media">
+            <div class="media-left">
+              <a href="{% url 'article' art.id %}">
+                <img class="media-object" src="{{ MEDIA_URL }}{{ art.img }}?imageView2/1/w/64/h/64" alt="...">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><a href="{% url 'article' art.id %}">{{art.title}}</a></h4>
+              <p>{{art.desc}}</p>
+            </div>
+          </li>
+        {% endfor %}
+      {% else %}
+      <div class="col-md-8 col-md-offset-2" >
+            <li class="media">
+            <div class="media-left">
+              
+                <img class="media-object" src="http://oo6nf8z20.bkt.clouddn.com/woniu.jpg?imageView2/1/w/200/h/200">
+              
+            </div>
+            <div class="media-body no-result">
+              <h1 class="r-wz">Results not found</h1>
+            </div>
+          </li>
+      </div>
+      {% endif %}
+        </ul>
+      </div> 
+      </div>
+    
+   </div>
+</div>
+
+{% endblock %}
+
+
+

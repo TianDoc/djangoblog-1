@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+ 
+{% block title %}朽小蜗{% endblock %}
+
+{% block cssjs %}
+ <script src="{% static 'js/changyan.js' %}" ></script> 
+<link href="{% static 'css/about.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="art-content">
+  <div class="container cent">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="sing-content">
+          <div class='about'>
+            <h1 class="con-title">About me</h1>
+            <p >我是朽小蜗，程序员一枚</p>
+            <p >爱旅行，爱设计，爱编程，爱折腾</p>
+            <p >朽小蜗，朽木的小窝</p>
+            <p >在此记录并分享小蜗的成长</p>
+            <p >还有小蜗的梦想</p>
+            <p >开一家自己的小店</p>
+            <p >为喜欢的客人免单</p>
+            <p >闲来，敲敲代码</p>
+            <p >写写文字，亦是一件很幸福的事情</p>
+          </div>
+          <div class="about-comment">
+         <div id="SOHUCS"  sid="about"></div> 
+          </div>
+        </div>
+      </div>
+   </div>
+</div>
+{% endblock %}
+
+
+
+

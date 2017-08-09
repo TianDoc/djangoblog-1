@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<link href="{% static 'css/page.css' %}" rel="stylesheet">
+{% if article_list.paginator.num_pages > 1 %}
+<div class="page">
+<ul class="pager">
+    {% if article_list.has_previous %}
+    <li ><a href="?page={{ article_list.previous_page_number }}">&larr; 上一页</a></li>
+    {% endif %}
+    {% if article_list.has_next %}
+    <li ><a href="?page={{ article_list.next_page_number }}">下一页 &rarr;</a></li>
+    {% endif %}
+</ul>
+</div>
+{% endif %}

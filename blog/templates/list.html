@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+ {% load staticfiles %}
+{% block title %}朽小蜗{% endblock %}
+
+{% block cssjs %}
+<script src="{% static 'js/jquery1.8.3.min.js' %}"></script>
+<script src="{% static 'js/masonry-docs.min.js' %}"></script>
+<link href="{% static 'css/list.css' %}" rel="stylesheet">
+<script>
+   $(function() {
+    var $container = $('#masonry');
+    $container.imagesLoaded(function() {
+        $container.masonry({
+                itemSelector: '.item',
+                isAnimated: true,
+            });
+     });
+});
+</script>
+{% endblock %}
+
+{% block banner %}
+{% include "banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div id="masonry" class="container">
+{% for article in article_list %}
+  <div class="col-xs-12 col-sm-6 col-md-3 item">
+    <div class="thumbnail">
+        <div class="imgs img-responsive">
+            <a href="{% url 'article' article.id %}"><img src="{{ MEDIA_URL }}{{ article.img }}" /></a>
+        </div>
+        <div class="caption">
+            <div class="title"><a href="{% url 'article' article.id %}">{{ article.title }}</a></div>
+            <div class="content">
+                 {{ article.desc|slice:"52" }}...
+            </div>
+            <div class="author">on {{ article.published_date|date:"Y.m.d" }}  
+                by <a target="_blank" href="">{{ article.user }}</a>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}    
+</div>
+{% include "page.html" %}
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load myfilter %}
+{% load staticfiles %}
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block cssjs %}
+    <!--  <link rel="stylesheet" href="http://picturebag.qiniudn.com/monokai.css"> -->
+     <link href="{% static 'css/code.css' %}" rel="stylesheet">
+    <link href="{% static 'css/article.css' %}" rel="stylesheet">
+   <script src="{% static 'js/changyan.js' %}" ></script> 
+    <script>
+        window._bd_share_config={"common":{
+    "bdSnsKey":{},
+    "bdText":"",
+    "bdMini":"2",
+    "bdMiniList":false,
+    "bdPic":"",
+    "bdStyle":"1",
+    "bdSize":"16"},
+    "share":{},
+    "image":{"viewList":["fbook","twi","linkedin","qzone","tsina","douban","weixin",],
+        "viewText":"分享到：",
+        "viewSize":"16"
+    }};
+with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?'];
+    </script>
+{% endblock %}
+ 
+{% block content %}
+
+<div class="art-content">
+  <div class="container cent">
+    
+      <div class="col-md-10 col-md-offset-1 sing-content">
+        <h1 class="con-title">{{ article.title }}</h1>
+          <div class="content">
+          {% if article.img_is_centent_show == 1 %}
+          <p><img class="img-responsive cont-img" src="{{ MEDIA_URL }}{{ article.img }}?imageView2/0/w/500" /></p>
+          {% endif %}
+          {{ article.content|custom_markdown }}
+          </div>
+          <div class="tag"><span>tags:
+              {% for tag in article_info_tags %}
+                <a href="{% url 'arts_by_tag' tag.id %}" >{{ tag.name }}</a>
+                {% if not forloop.last %},{% endif %}
+              {% endfor %} 
+          </span>&nbsp;&nbsp;&nbsp;&nbsp;<span>文/<a href="{% url 'about' %}" >{{ article.user }}</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ article.published_date|date:'Y.m.d' }}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ article.view_count }}阅读</span>
+          <div class="bdsharebuttonbox pull-right"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a><a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a><a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+              </div>
+
+
+          <div class="comment">
+           <div id="SOHUCS"  sid="{{ SITE_URL }}article/{{ article.id }}"></div> 
+          </div>
+          </div>
+            
+      </div>
+      
+   </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+ .footer-overlay {
+    padding-top: 15px;
+    background: #333 url("/static/img/header-bg.png") left top repeat;
+    min-height: 222px;
+    color: #fff;
+}
+  .views-head,.tags-head,.contcat-head{
+      text-align: center;
+      font-size: 18px;
+      padding: 15px 0px;
+  }
+  .m-h a{
+    color: #fff;
+    font-size: 14px;
+    padding-bottom: 8px;
+  }
+  .media-time{
+    font-size: 12px;
+  }
+
+ .tag-a a{
+   color: #fff;
+   font-size: 14px;
+   display: block;
+   height: 45px;
+   line-height: 45px;
+   text-align: center;
+   margin-bottom: 10px;
+ }
+ .tag-a{
+    float:left;width:25%;list-style:none;
+ }
+
+  .contcat-a a{
+    color: #fff;
+   font-size: 14px;
+   display: block;
+   height: 45px;
+   line-height: 45px;
+   text-align: center;
+   margin-bottom: 10px;
+  }
+ .contcat-a{
+   width: 100%;list-style:none;
+ }
+ .contcat-body,.tags-body{
+    padding: 0px;
+
+  }
+
+.media-my{
+  margin-top: 10px;
+}
+ @media(max-width: 767px){
+  .tags,.views,.contcat{
+   margin:auto;
+   max-width: 300px;
+  }
+
+}
+.bottom{
+    text-align: center;
+    padding: 15px 0px;
+    min-height: 50px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+    .bottom>a{
+        color: #fff;
+    }

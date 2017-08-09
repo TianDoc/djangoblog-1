@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+ {% load staticfiles %}
+{% block title %}朽小蜗{% endblock %}
+ 
+{% block cssjs %}
+<link href="{% static 'css/failure.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="art-content">
+  <div class="container cent">
+   
+      <div class="col-md-10 col-md-offset-1 sing-content">
+          <div class="row">
+            <div class="col-sm-4 col-sm-offset-2 failure-img">
+              <div  class="f-img">
+              <img class="img-responsive" src="{% static 'img/woniu.jpg' %}">
+              </div>
+            </div>
+            <div class="col-sm-4 failure-desc">
+             {{ reason }}
+          </div>
+          </div>
+      </div>
+    
+   </div>
+</div>
+
+{% endblock %}
+
+
